@@ -4,8 +4,12 @@ import random
 
 BACKGROUND_COLOR = "#B1DDC6"
 
-data = pd.read_csv("data/french_words.csv")
-content = data.to_dict(orient="records")
+# ----------------------- LOAD DATA ------------------------- #
+try:
+    data = pd.read_csv("data/words_to_learn.csv")   
+except FileNotFoundError:
+    data = pd.read_csv("data/french_words.csv")     
+content = data.to_dict(orient="records")  
 
 curr = {}
 
@@ -14,14 +18,13 @@ def next_card():
     global curr, flip_timer
 
     window.after_cancel(flip_timer) 
-
     curr = random.choice(content)
 
     canvas.itemconfig(card_background, image=card_front_img)
     canvas.itemconfig(card_title, text="French", fill="black")
     canvas.itemconfig(card_word, text=curr["French"], fill="black")
 
-    flip_timer = window.after(3000, flip_card)  
+    flip_timer = window.after(3000, flip_card)   # Auto flip timer
 
 
 def flip_card():
@@ -29,8 +32,14 @@ def flip_card():
     canvas.itemconfig(card_title, text="English", fill="white")
     canvas.itemconfig(card_word, text=curr["English"], fill="white")
 
+
 def know():
+    """Remove the known word, save progress, and move to next card."""
     content.remove(curr)
+
+    df = pd.DataFrame(content)
+    df.to_csv("data/words_to_learn.csv", index=False)
+
     next_card()
 
 
@@ -60,6 +69,6 @@ right_img = PhotoImage(file="images/right.png")
 button_tick = Button(image=right_img, highlightthickness=0, borderwidth=0, command=know)
 button_tick.grid(row=1, column=1)
 
-next_card()  
+next_card()
 
 window.mainloop()
