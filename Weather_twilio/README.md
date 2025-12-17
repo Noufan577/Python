@@ -34,7 +34,6 @@ PHONE=+91XXXXXXXXXX
 WEATHER_API_APPID=your_openweather_api_key
 
 
-⚠️ Do not upload .env to GitHub
 
 ▶️ How to Run the Project
 python main.py
