@@ -9,6 +9,8 @@ account_sid = os.getenv("TWILIO_ACCOUNT_SID")
 auth_token = os.getenv("TWILIO_ACCOUNT_AUTH")
 weather_id = os.getenv("WEATHER_API_APPID")
 
+
+
 message_id=os.getenv("TWILIO_MESSAGE_ID")
 #i am using free trail so my phone details
 phone=os.getenv("PHONE")
@@ -22,8 +24,8 @@ print("Keys loaded successfully")
 url="https://api.openweathermap.org/data/2.5/forecast?"
 
 parm={
-    "lat" :-6.175110,
-    "lon" : -106.865036,
+    "lat" :8.893212,
+    "lon" : 76.614143,
     "appid" : weather_id,
     "cnt" : 4,
 }
