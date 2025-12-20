@@ -41,7 +41,7 @@ percent_change = ((latest_close - previous_close) / previous_close) * 100
 percent_change = round(percent_change, 2)
 
 
-if abs(percent_change) >= 0:
+if abs(percent_change) >= 5:
 
     newsapi = NewsApiClient(api_key=NEWS_API_KEY)
 
