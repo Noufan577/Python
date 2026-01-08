@@ -10,8 +10,8 @@ EMAIL_ADDRESS = os.getenv("EMAIL_ADDRESS")
 EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")
 SMTP_ADDRESS = os.getenv("SMTP_ADDRESS")
 
-TARGET_PRICE = 1600.00
-URL = "https://www.amazon.in/ZEBRONICS-Headphone-Comfortable-Earcushion-Black/dp/B0D573NP19/ref=sr_1_2_sspa?crid=W6KU4D0YDBRQ"
+TARGET_PRICE = "SET_YOUR_TARGET_PRICE_HERE"  # e.g., 1500.00
+URL = "YOUR_PRODUCT_LINK_HERE"
 
 
 header = {
