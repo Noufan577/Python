@@ -14,7 +14,7 @@ header = {
 }
 
 # Google Form link where data will be submitted
-gform_link = "https://docs.google.com/forms/d/e/1FAIpQLScG0KJwRmX-wfpRqaF9Zn9Zz5tbMTVpiTlClOETlrzPj0B-iQ/viewform?usp=dialog"
+gform_link = "GIVE YOUR GOOGLE FORM LINK HERE"
 
 # Fetch Zillow clone page
 response = requests.get(
