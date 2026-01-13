@@ -1,5 +1,9 @@
 .env
 
+
+# Chrome Selenium profile (DO NOT COMMIT)
+chrome_profile/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
